@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JSON Configuration Example</title>
+<style>
+body { font-family: monospace; padding: 20px; background: #282c34; color: #abb2bf; }
+pre { background: #21252b; padding: 20px; border-radius: 8px; overflow-x: auto; }
+.json-key { color: #e06c75; }
+.json-string { color: #98c379; }
+.json-number { color: #d19a66; }
+</style>
+</head>
+<body>
+<h1>JSON Configuration Files</h1>
+
+<h2>package.json</h2>
+<pre>{
+  "name": "bhindi-app",
+  "version": "1.0.0",
+  "description": "AI-powered automation platform",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "jest",
+    "build": "webpack --mode production"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.0.0",
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "nodemon": "^2.0.22"
+  }
+}</pre>
+
+<h2>tsconfig.json</h2>
+<pre>{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "commonjs",
+    "lib": ["ES2020"],
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}</pre>
+
+<h2>.env.example</h2>
+<pre>NODE_ENV=production
+PORT=3000
+DATABASE_URL=mongodb://localhost:27017/bhindi
+JWT_SECRET=your-secret-key
+API_KEY=your-api-key</pre>
+</body>
+</html>
